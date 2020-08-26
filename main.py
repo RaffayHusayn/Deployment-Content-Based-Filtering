@@ -56,6 +56,7 @@ def index():
         py_testuser = json.loads(message['user']) #makes a python variable of type string
         int_testuser = int(py_testuser) #converts string into int
 
+
         #making predictions
 
         movie_list = get_recommendations_with_id(int_testuser).head(20) #this is pandas 1d array
