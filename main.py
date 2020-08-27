@@ -53,13 +53,13 @@ def index():
 
         #getting the userId from front-end
         message = request.get_json(force=True)
-        py_testuser = json.loads(message['user']) #makes a python variable of type string
-        int_testuser = int(py_testuser) #converts string into int
+        py_movie = json.loads(message['movie']) #makes a python variable of type string
+        int_movie = int(py_movie) #converts string into int
 
 
         #making predictions
 
-        movie_list = get_recommendations_with_id(int_testuser).head(20) #this is pandas 1d array
+        movie_list = get_recommendations_with_id(int_movie).head(20) #this is pandas 1d array
 
         json_movie_list =movie_list.tolist() #this is python list
         total = len(json_movie_list)
